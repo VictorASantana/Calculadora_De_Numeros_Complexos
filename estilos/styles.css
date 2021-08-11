@@ -16,6 +16,7 @@ h1.titulo{
 
 div.funcoes{
     margin: 1.5rem 4rem;
+    border-radius: 0.3rem;
     padding: 1.1rem;
     background-color: #FAF9F9;
     display: flex;
@@ -50,7 +51,7 @@ ul.listaDeFunc{
 ul.listaDeFunc li{
     background-color: #FAF9F9;
     padding: 0.4rem;
-    color: #000;
+    color: #0d1821;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -62,25 +63,66 @@ ul.listaDeFunc li p{
     background-color: #FAF9F9;
     margin: 0.4rem 0rem;
 }
+
+ul.listaDeFunc li p.subtitulo{
+    color: #89b0ae;
+    background-color: #FAF9F9;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
 ul.listaDeFunc li p.descricao{
     color: #555B6E;
 }
 
-ul.listaDeFunc li.operacoes p{
-    margin-right: 6rem;
-    
-}
 
 ul.listaDeFunc li input{
-    background-color: #c4c4c4;
+    background-color: #89b0ae;
     color: #FAF9F9;
     padding: 0.18rem;
     height: 1.5rem;
     font-weight: 2rem;
     border: none;
+    border-radius: 0.3rem;
     margin: 0.15rem;
 }
 
+button.confirma{
+    width: 11.1rem;
+    border: none;
+    color: #FAF9F9;
+    border-radius: 0.3rem;
+}
+
+button.confirma:hover{
+    background-color: #0d1821;
+}
+
+button.confirma:active{
+    background-color: #89b0ae;
+}
+
+div.operacoes{
+    background-color: #FAF9F9;
+    border-radius: 0.3rem;
+    margin: 1.5rem 4rem;
+    padding: 1.1rem;
+}
+
+div.operacoes p{
+    color: #89b0ae;
+    background-color: #FAF9F9;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+div.operacoes ul.operacoes{
+    border-radius: 0.3rem;
+}
+
+div.operacoes ul.operacoes li{
+    background-color: #FAF9F9;
+    list-style: none;
+}
 
 @media(max-width: 700px){
     
@@ -96,10 +138,28 @@ ul.listaDeFunc li input{
     ul.listaDeFunc{
         margin: 1.5rem 1rem;
         padding: 1.1rem;
+        font-size: 0.9rem;
         background-color: #FAF9F9;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+    }
+
+    div.manipulacoes{
+        margin-left: 1rem;
+        margin-top: 1.5rem;
+        background-color: #FAF9F9;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    
+    div.manipulacoes p{
+        background-color: #FAF9F9;
+        margin-top: 0.5rem;
+        padding: 1.1rem;
+        font-size: 0.9rem;
     }
 }
