@@ -1,0 +1,105 @@
+*{
+    background-color: #555B6E;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1.titulo{
+    margin-top: 2.5rem;
+    color: #FAF9F9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.funcoes{
+    margin: 1.5rem 4rem;
+    padding: 1.1rem;
+    background-color: #FAF9F9;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+div.manipulacoes{
+    margin-left: 10rem;
+    background-color: #FAF9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+div.manipulacoes p{
+    background-color: #FAF9F9;
+    margin-top: 0.4rem;
+    padding: 0.4rem;
+}
+
+ul.listaDeFunc{
+    background-color: #FAF9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+ul.listaDeFunc li{
+    background-color: #FAF9F9;
+    padding: 0.4rem;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+ul.listaDeFunc li p{
+    background-color: #FAF9F9;
+    margin: 0.4rem 0rem;
+}
+ul.listaDeFunc li p.descricao{
+    color: #555B6E;
+}
+
+ul.listaDeFunc li.operacoes p{
+    margin-right: 6rem;
+    
+}
+
+ul.listaDeFunc li input{
+    background-color: #c4c4c4;
+    color: #FAF9F9;
+    padding: 0.18rem;
+    height: 1.5rem;
+    font-weight: 2rem;
+    border: none;
+    margin: 0.15rem;
+}
+
+
+@media(max-width: 700px){
+    
+    h1.titulo{
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        color: #FAF9F9;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    ul.listaDeFunc{
+        margin: 1.5rem 1rem;
+        padding: 1.1rem;
+        background-color: #FAF9F9;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
