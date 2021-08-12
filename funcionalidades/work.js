@@ -37,6 +37,18 @@ botaoCartesiano.onclick = function (){
     console.log(vetorDeComplexos);
 }
 
+let botaoPolar = document.getElementById("polar");
+botaoPolar.onclick = function (){
+    let modulo = document.querySelector("moduloDoNum");
+    let angulo = document.querySelector("anguloDoNum");
+    let valorModulo = modulo.value;
+    let valorAngulo = angulo.value;
+    valorModulo = parseFloat(valorModulo);
+    valorAngulo = parseFloat(valorAngulo);
+    let novoImagPolar = criaComplexoPolar(valorModulo, valorAngulo);
+    vetorDeComplexos.push(novoImagPolar);
+}
+
 
 
 
