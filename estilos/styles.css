@@ -26,7 +26,8 @@ div.funcoes{
 }
 
 div.manipulacoes{
-    margin-left: 10rem;
+    margin-left: 15rem;
+    margin-top: 0.1rem;
     background-color: #FAF9F9;
     display: flex;
     flex-direction: column;
@@ -46,6 +47,7 @@ ul.listaDeFunc{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin: 0rem 2rem;
 }
 
 ul.listaDeFunc li{
@@ -74,12 +76,13 @@ ul.listaDeFunc li p.descricao{
     color: #555B6E;
 }
 
-
 ul.listaDeFunc li input{
     background-color: #89b0ae;
+    font-size: 1rem;
     color: #FAF9F9;
     padding: 0.18rem;
-    height: 1.5rem;
+    height: 2rem;
+    width: 15rem;
     font-weight: 2rem;
     border: none;
     border-radius: 0.3rem;
@@ -87,10 +90,12 @@ ul.listaDeFunc li input{
 }
 
 button.confirma{
-    width: 11.1rem;
+    width: 15rem;
+    height: 2rem;
     border: none;
     color: #FAF9F9;
     border-radius: 0.3rem;
+    margin: 0.15rem;
 }
 
 button.confirma:hover{
@@ -113,15 +118,19 @@ div.operacoes p{
     background-color: #FAF9F9;
     font-weight: bolder;
     font-size: 1.2rem;
+    margin: 0.4rem 2.5rem;
 }
 
 div.operacoes ul.operacoes{
+    background-color: #FAF9F9;
     border-radius: 0.3rem;
+    margin: 0.4rem 2.5rem;
 }
 
 div.operacoes ul.operacoes li{
     background-color: #FAF9F9;
     list-style: none;
+    margin: 0.4rem;
 }
 
 @media(max-width: 700px){

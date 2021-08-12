@@ -15,14 +15,14 @@
                 <li>
                     <p class="subtitulo">Inserir numero complexo</p>
                     <p class="descricao">Forma Cartesiana:</p>
-                    <input type="text" class="real" placeholder="Parte real">
-                    <input type="text" class="imaginario" placeholder="Parte imaginaria">
-                    <button class="confirma">OK</button>
+                    <input type="text" class="real" placeholder="Parte real" id="parteReal">
+                    <input type="text" class="imaginario" placeholder="Parte imaginaria" id="parteImag">
+                    <button class="confirma" id="cartesiano">OK</button>
 
                     <p class="descricao">Forma Polar:</p>
                     <input type="text" class="modulo" placeholder="Modulo">
-                    <input type="text" class="angulo" placeholder="Angulo">
-                    <button class="confirma">OK</button>
+                    <input type="text" class="angulo" placeholder="Angulo (Em radianos)">
+                    <button class="confirma" id="polar">OK</button>
                 </li>
             </ul>
             <div class="manipulacoes">
@@ -58,6 +58,7 @@
         </div>
        
     </main>
+    <script src="/funcionalidades/work.js"></script>
     
 </body>
 </html>
