@@ -70,30 +70,44 @@ function validaAngulo(angulo){ /*Faz um ângulo ficar no intervalo [-pi, +pi]*/
 /*Funções de interação com o HTML*/ 
 let botaoCartesiano = document.getElementById("cartesiano");
 botaoCartesiano.onclick = function (){
+    numComplexos++;
     let real = document.querySelector("#parteReal");
     let imag = document.querySelector("#parteImag");
     let valorReal = real.value;
     let valorImag = imag.value;
     valorReal = parseFloat(valorReal);
     valorImag = parseFloat(valorImag);
-    console.log(valorImag+1);
-    console.log(valorReal+1);
     let novoImag = criaComplexoCartesiano(valorReal, valorImag);
     vetorDeComplexos.push(novoImag);
-    console.log(vetorDeComplexos);
+    let formata = "Z" + numComplexos + " = " + novoImag.parteReal + " + " + novoImag.parteImaginaria + "j";
+    console.log(formata);
+    adicionaNaTela(formata);
 }
 
 let botaoPolar = document.getElementById("polar");
 botaoPolar.onclick = function (){
-    let modulo = document.querySelector("moduloDoNum");
-    let angulo = document.querySelector("anguloDoNum");
+    let modulo = document.querySelector("#moduloDoNum");
+    let angulo = document.querySelector("#anguloDoNum");
     let valorModulo = modulo.value;
     let valorAngulo = angulo.value;
     valorModulo = parseFloat(valorModulo);
     valorAngulo = parseFloat(valorAngulo);
     let novoImagPolar = criaComplexoPolar(valorModulo, valorAngulo);
     vetorDeComplexos.push(novoImagPolar);
+    let formata = novoImagPolar.parteReal + " + " + novoImagPolar.parteImaginaria + "j";
+    console.log(formata);
+    adicionaNaTela(formata);
 }
+
+function adicionaNaTela (complexo){
+    let manipulacoes = document.querySelector("#manipula");
+    let novoComplexo = document.createElement("p");
+    novoComplexo.classList.add("novoItem");
+    novoComplexo.innerHTML = complexo;
+    manipulacoes.appendChild(novoComplexo);
+}
+
+
 
 
 
