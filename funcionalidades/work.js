@@ -15,7 +15,7 @@ function criaComplexoCartesiano (real, imag){
 function criaComplexoPolar (modulo, angulo){
     let novoImaginarioPolar = new Object();
     novoImaginarioPolar.modulo = modulo;
-    novoImaginarioPolar.angulo = angulo;
+    novoImaginarioPolar.angulo = validaAngulo(angulo);
     novoImaginarioPolar.parteReal = modulo * Math.cos(angulo);
     novoImaginarioPolar.parteImaginaria = modulo * Math.sin(angulo);
     return novoImaginarioPolar;
@@ -24,6 +24,47 @@ function criaComplexoPolar (modulo, angulo){
 function verificaNumComplexos(){
     if(numComplexos < 2) return true;
     else return false;
+}
+
+/*Operações entre complexos*/
+function adiciona(complexo1, complexo2){
+    let real = complexo1.parteReal + complexo2.parteReal;
+    let imag = complexo1.parteImaginaria + complexo2.parteImaginaria;
+    let novoImaginario = criaComplexoCartesiano(real, imag);
+    return novoImaginario;
+}
+
+function subtrai(complexo1, complexo2){
+    let real = complexo1.parteReal - complexo2.parteReal;
+    let imag = complexo1.parteImaginaria - complexo2.parteImaginaria;
+    let novoImaginario = criaComplexoCartesiano(real, imag);
+    return novoImaginario;
+}
+
+function multiplica(complexo1, complexo2){
+    let modulo = complexo1.modulo * complexo2.modulo;
+    let angulo = complexo1.angulo + complexo2.angulo;
+    novoImaginario = criaComplexoPolar(modulo, angulo);
+    return novoImaginario;
+}
+
+function divide(complexo1, complexo2){
+    let modulo = complexo1.modulo / complexo2.modulo;
+    let angulo = complexo1.angulo - complexo2.angulo;
+    novoImaginario = criaComplexoPolar(modulo, angulo);
+    return novoImaginario;
+}
+
+function validaAngulo(angulo){ /*Faz um ângulo ficar no intervalo [-pi, +pi]*/
+    if (angulo > 2*Math.PI || angulo < -2*Math.PI) {
+        angulo %= 2*Math.PI;
+    }
+    if (angulo > Math.PI) {
+        angulo -= 2*Math.PI;
+    } else if (angulo < -Math.PI) {
+        angulo += 2*Math.PI;
+    }
+    return angulo;
 }
 
 /*Funções de interação com o HTML*/ 
