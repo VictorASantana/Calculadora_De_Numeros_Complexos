@@ -55,6 +55,7 @@ function divide(complexo1, complexo2){
     return novoImaginario;
 }
 
+/*Funções auxiliares*/
 function validaAngulo(angulo){ /*Faz um ângulo ficar no intervalo [-pi, +pi]*/
     if (angulo > 2*Math.PI || angulo < -2*Math.PI) {
         angulo %= 2*Math.PI;
@@ -64,6 +65,16 @@ function validaAngulo(angulo){ /*Faz um ângulo ficar no intervalo [-pi, +pi]*/
     } else if (angulo < -Math.PI) {
         angulo += 2*Math.PI;
     }
+    return angulo;
+}
+
+function grausPararadianos(angulo){
+    angulo *= (Math.PI / 180);
+    return angulo;
+}
+
+function radianosParaGraus(angulo){
+    angulo *= (180 / Math.PI);
     return angulo;
 }
 
