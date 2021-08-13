@@ -47,7 +47,7 @@ ul.listaDeFunc{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 0rem 2rem;
+    margin: 0rem 1rem;
 }
 
 ul.listaDeFunc li{
@@ -86,7 +86,7 @@ ul.listaDeFunc li input{
     font-weight: 2rem;
     border: none;
     border-radius: 0.3rem;
-    margin: 0.15rem;
+    margin: 0.3rem 0.1rem;
 }
 
 button.confirma{
@@ -111,6 +111,10 @@ div.operacoes{
     border-radius: 0.3rem;
     margin: 1.5rem 4rem;
     padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 div.operacoes p{
@@ -118,23 +122,57 @@ div.operacoes p{
     background-color: #FAF9F9;
     font-weight: bolder;
     font-size: 1.1rem;
-    margin: 0.4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    margin: 0rem 2.5rem;
 }
 
 div.operacoes ul.operacoes{
     background-color: #FAF9F9;
     border-radius: 0.3rem;
-    margin: 0.4rem 2.5rem;
+    margin: 0rem 2rem;
 }
 
 div.operacoes ul.operacoes li{
     background-color: #FAF9F9;
     list-style: none;
-    margin: 0.4rem;
+    margin: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+div.manipulacoes p.operandos{
+    font-size: 1.1rem;
+    color: #89b0ae;
+    font-weight: bolder;
 }
 
 p.novoItem{
     color: black;
+}
+
+button.acao{
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    color: #FAF9F9;
+    border-radius: 0.3rem;
+    margin: 0.15rem;
+}
+
+button.acao:hover{
+    background-color: #0d1821;
+}
+
+button.acao:active{
+    background-color: #89b0ae;
 }
 
 @media(max-width: 1000px){
@@ -149,7 +187,6 @@ p.novoItem{
     }
     
     ul.listaDeFunc{
-        margin: 1.5rem 1rem;
         padding: 1.1rem;
         font-size: 0.9rem;
         background-color: #FAF9F9;
@@ -160,26 +197,68 @@ p.novoItem{
     }
 
     div.manipulacoes{
-        margin-left: 0.5rem;
-        margin-top: 1.5rem;
+        margin-top: 0.7rem;
+        margin-left: 3rem;
         background-color: #FAF9F9;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
+        align-items: flex-start;
+        justify-content: flex-start;
     }
     
     div.manipulacoes p{
         background-color: #FAF9F9;
-        margin-top: 0.5rem;
-        padding: 1.1rem;
+        margin-top: 0.8rem;
         font-size: 0.9rem;
     }
-
 
     p.novoItem{
         color: black;
         font-size: 0.9rem;
+    }
+
+    div.manipulacoes p.operandos{
+        font-size: 1.1rem;
+        color: #89b0ae;
+        font-weight: bolder;
+    }
+
+    div.operacoes{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    div.operacoes ul.operacoes li p.operacao{
+        color: #0d1821;
+        font-size: 0.9rem;
+        margin: 0.3rem 0rem;
+        display: flex;
+    }
+
+    div.operacoes ul.operacoes li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button.acao{
+        width: 10rem;
+        height: 2rem;
+        border: none;
+        color: #FAF9F9;
+        border-radius: 0.3rem;
+        margin: 0.15rem;
+    }
+    
+    button.acao:hover{
+        background-color: #0d1821;
+    }
+    
+    button.acao:active{
+        background-color: #89b0ae;
     }
 }
 
@@ -191,17 +270,74 @@ p.novoItem{
     }
 
     div.manipulacoes {
-        margin: 0.5rem 1.5rem;
-    }
-
-    div.manipulacoes p{
-        margin: 0rem 0.5rem;
+        margin-left: 0rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     div.manipulacoes p.operandos{
         font-size: 1.1rem;
+        padding: 0.5rem;
         color: #89b0ae;
         font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    div.operacoes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.operacoes p{
+        margin: 0.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.operacoes ul.operacoes{
+        margin: 0.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.operacoes ul.operacoes li p.operacao{
+        color: #0d1821;
+        font-size: 0.9rem;
+        margin: 0.3rem 0rem;
+        display: flex;
+    }
+
+    div.operacoes ul.operacoes li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button.acao{
+        width: 15rem;
+        height: 2rem;
+        border: none;
+        color: #FAF9F9;
+        border-radius: 0.3rem;
+        margin: 0.15rem;
+    }
+    
+    button.acao:hover{
+        background-color: #0d1821;
+    }
+    
+    button.acao:active{
+        background-color: #89b0ae;
     }
 
 }
