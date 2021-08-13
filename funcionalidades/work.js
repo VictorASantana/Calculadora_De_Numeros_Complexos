@@ -90,9 +90,11 @@ botaoCartesiano.onclick = function (){
     valorImag = parseFloat(valorImag);
     let novoImag = criaComplexoCartesiano(valorReal, valorImag);
     vetorDeComplexos.push(novoImag);
-    let formata = "Z" + numComplexos + " = " + novoImag.parteReal + " + " + novoImag.parteImaginaria + "j";
-    console.log(formata);
-    adicionaNaTela(formata);
+    let formataCart;
+    if(novoImag.parteImaginaria >= 0) formataCart = "Z" + numComplexos + " = " + novoImag.parteReal + " + " + novoImag.parteImaginaria + "j";
+    else formataCart = "Z" + numComplexos + " = " + novoImag.parteReal + " " + novoImag.parteImaginaria + "j";
+    let formataPolar = "Z" + numComplexos + " = " + novoImag.modulo + " ∠" + novoImag.angulo;
+    adicionaNaTela(formataCart, formataPolar);
 }
 
 let botaoPolar = document.getElementById("polar");
@@ -106,17 +108,33 @@ botaoPolar.onclick = function (){
     valorAngulo = parseFloat(valorAngulo);
     let novoImagPolar = criaComplexoPolar(valorModulo, valorAngulo);
     vetorDeComplexos.push(novoImagPolar);
-    let formata = "Z" + numComplexos + " = " + novoImagPolar.parteReal + " + " + novoImagPolar.parteImaginaria + "j";
-    console.log(formata);
-    adicionaNaTela(formata);
+    let formataCart;
+    if(novoImagPolar.parteImaginaria >= 0) formataCart = "Z" + numComplexos + " = " + novoImagPolar.parteReal + " + " + novoImagPolar.parteImaginaria + "j";
+    else formataCart = "Z" + numComplexos + " = " + novoImagPolar.parteReal + " " + novoImagPolar.parteImaginaria + "j";
+    let formataPolar = "Z" + numComplexos + " = " + novoImagPolar.modulo + " ∠" + novoImagPolar.angulo;
+    adicionaNaTela(formataCart, formataPolar);
 }
 
-function adicionaNaTela (complexo){
+function adicionaNaTela (complexoCartesiano, complexoPolar){
     let manipulacoes = document.querySelector("#manipula");
-    let novoComplexo = document.createElement("p");
-    novoComplexo.classList.add("novoItem");
-    novoComplexo.innerHTML = complexo;
+    let novoComplexo = document.createElement("li");
+    let tituloCartesiana = document.createElement("p");
+    let tituloPolar = document.createElement("p");
+    let parteCartesiana = document.createElement("p");
+    let partePolar = document.createElement("p");
+
+    tituloCartesiana.innerHTML = "Forma Cartesiana"
+    tituloPolar.innerHTML = "Forma Polar: ";
+
+    parteCartesiana.innerHTML = complexoCartesiano;
+    partePolar.innerHTML = complexoPolar;
     manipulacoes.appendChild(novoComplexo);
+    novoComplexo.classList.add("novoItem");
+    novoComplexo.appendChild(tituloCartesiana);
+    novoComplexo.appendChild(parteCartesiana);
+    novoComplexo.appendChild(tituloPolar);
+    novoComplexo.appendChild(partePolar);
+    
 }
 
 

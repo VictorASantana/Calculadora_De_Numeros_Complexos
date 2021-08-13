@@ -127,13 +127,13 @@ div.operacoes p{
     align-items: flex-start;
     justify-content: flex-start;
     margin-top: 1rem;
-    margin: 0rem 2.5rem;
+    margin: 0rem 1.5rem;
 }
 
 div.operacoes ul.operacoes{
     background-color: #FAF9F9;
     border-radius: 0.3rem;
-    margin: 0rem 2rem;
+    margin: 0rem 1rem;
 }
 
 div.operacoes ul.operacoes li{
@@ -154,8 +154,15 @@ div.manipulacoes p.operandos{
     font-weight: bolder;
 }
 
-p.novoItem{
+ul#listaDeOperandos{
+    list-style: none;
+    background-color: #FAF9F9;
+}
+
+li.novoItem{
     color: black;
+    background-color: #FAF9F9;
+    list-style: none;
 }
 
 button.acao{
@@ -228,6 +235,27 @@ button.acao:active{
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+    }
+    
+    div.operacoes p{
+        margin: 0rem 2.3rem;
+    }
+
+    div.operacoes ul.operacoes li{
+        background-color: #FAF9F9;
+        list-style: none;
+        margin: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.operacoes ul.operacoes{
+        background-color: #FAF9F9;
+        border-radius: 0.3rem;
+        margin: 0rem 1.75rem;
     }
 
     div.operacoes ul.operacoes li p.operacao{
