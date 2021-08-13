@@ -117,7 +117,7 @@ div.operacoes p{
     color: #89b0ae;
     background-color: #FAF9F9;
     font-weight: bolder;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0.4rem 2.5rem;
 }
 
@@ -137,7 +137,7 @@ p.novoItem{
     color: black;
 }
 
-@media(max-width: 700px){
+@media(max-width: 1000px){
     
     h1.titulo{
         margin-top: 2rem;
@@ -160,7 +160,7 @@ p.novoItem{
     }
 
     div.manipulacoes{
-        margin-left: 1rem;
+        margin-left: 0.5rem;
         margin-top: 1.5rem;
         background-color: #FAF9F9;
         display: flex;
@@ -175,4 +175,33 @@ p.novoItem{
         padding: 1.1rem;
         font-size: 0.9rem;
     }
+
+
+    p.novoItem{
+        color: black;
+        font-size: 0.9rem;
+    }
+}
+
+@media(max-width: 700px){
+    div.funcoes{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    div.manipulacoes {
+        margin: 0.5rem 1.5rem;
+    }
+
+    div.manipulacoes p{
+        margin: 0rem 0.5rem;
+    }
+
+    div.manipulacoes p.operandos{
+        font-size: 1.1rem;
+        color: #89b0ae;
+        font-weight: bolder;
+    }
+
 }

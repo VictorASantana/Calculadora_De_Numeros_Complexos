@@ -97,6 +97,7 @@ botaoCartesiano.onclick = function (){
 
 let botaoPolar = document.getElementById("polar");
 botaoPolar.onclick = function (){
+    numComplexos++;
     let modulo = document.querySelector("#moduloDoNum");
     let angulo = document.querySelector("#anguloDoNum");
     let valorModulo = modulo.value;
@@ -105,7 +106,7 @@ botaoPolar.onclick = function (){
     valorAngulo = parseFloat(valorAngulo);
     let novoImagPolar = criaComplexoPolar(valorModulo, valorAngulo);
     vetorDeComplexos.push(novoImagPolar);
-    let formata = novoImagPolar.parteReal + " + " + novoImagPolar.parteImaginaria + "j";
+    let formata = "Z" + numComplexos + " = " + novoImagPolar.parteReal + " + " + novoImagPolar.parteImaginaria + "j";
     console.log(formata);
     adicionaNaTela(formata);
 }
