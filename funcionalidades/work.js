@@ -22,7 +22,7 @@ function criaComplexoPolar (modulo, angulo){
 }
 
 function verificaNumComplexos(){
-    if(numComplexos < 2) return true;
+    if(numComplexos <= 2) return true;
     else return false;
 }
 
@@ -79,6 +79,8 @@ function radianosParaGraus(angulo){
 }
 
 /*Funções de interação com o HTML*/ 
+/*Adicionando novos complexos*/
+/*Input: Forma cartesiana*/
 let botaoCartesiano = document.getElementById("cartesiano");
 botaoCartesiano.onclick = function (){
     numComplexos++;
@@ -89,14 +91,23 @@ botaoCartesiano.onclick = function (){
     valorReal = parseFloat(valorReal);
     valorImag = parseFloat(valorImag);
     let novoImag = criaComplexoCartesiano(valorReal, valorImag);
-    vetorDeComplexos.push(novoImag);
+    if(verificaNumComplexos()) vetorDeComplexos.push(novoImag);
+    else{
+        vetorDeComplexos.length = 0;
+        vetorDeComplexos.push(novoImag);
+    }
+    console.log(vetorDeComplexos);
+    let index;
+    if(numComplexos < 3) index = numComplexos;
+    else index = 1;
     let formataCart;
-    if(novoImag.parteImaginaria >= 0) formataCart = "Z" + numComplexos + " = " + novoImag.parteReal + " + " + novoImag.parteImaginaria + "j";
-    else formataCart = "Z" + numComplexos + " = " + novoImag.parteReal + " " + novoImag.parteImaginaria + "j";
-    let formataPolar = "Z" + numComplexos + " = " + novoImag.modulo + " ∠" + novoImag.angulo;
+    if(novoImag.parteImaginaria >= 0) formataCart = "Z" + index + " = " + novoImag.parteReal + " + " + novoImag.parteImaginaria + "j";
+    else formataCart = "Z" + index + " = " + novoImag.parteReal + " " + novoImag.parteImaginaria + "j";
+    let formataPolar = "Z" + index + " = " + novoImag.modulo + " ∠" + novoImag.angulo;
     adicionaNaTela(formataCart, formataPolar);
 }
 
+/*Input: Forma polar*/
 let botaoPolar = document.getElementById("polar");
 botaoPolar.onclick = function (){
     numComplexos++;
@@ -107,11 +118,19 @@ botaoPolar.onclick = function (){
     valorModulo = parseFloat(valorModulo);
     valorAngulo = parseFloat(valorAngulo);
     let novoImagPolar = criaComplexoPolar(valorModulo, valorAngulo);
-    vetorDeComplexos.push(novoImagPolar);
+    if(verificaNumComplexos()) vetorDeComplexos.push(novoImagPolar);
+    else{
+        vetorDeComplexos.length = 0;
+        vetorDeComplexos.push(novoImagPolar);
+    }
+    let index;
+    if(numComplexos < 3) index = numComplexos;
+    else index = 1;
+    console.log(vetorDeComplexos);
     let formataCart;
-    if(novoImagPolar.parteImaginaria >= 0) formataCart = "Z" + numComplexos + " = " + novoImagPolar.parteReal + " + " + novoImagPolar.parteImaginaria + "j";
-    else formataCart = "Z" + numComplexos + " = " + novoImagPolar.parteReal + " " + novoImagPolar.parteImaginaria + "j";
-    let formataPolar = "Z" + numComplexos + " = " + novoImagPolar.modulo + " ∠" + novoImagPolar.angulo;
+    if(novoImagPolar.parteImaginaria >= 0) formataCart = "Z" + index + " = " + novoImagPolar.parteReal + " + " + novoImagPolar.parteImaginaria + "j";
+    else formataCart = "Z" + index + " = " + novoImagPolar.parteReal + " " + novoImagPolar.parteImaginaria + "j";
+    let formataPolar = "Z" + index + " = " + novoImagPolar.modulo + " ∠" + novoImagPolar.angulo;
     adicionaNaTela(formataCart, formataPolar);
 }
 
@@ -123,6 +142,11 @@ function adicionaNaTela (complexoCartesiano, complexoPolar){
     let parteCartesiana = document.createElement("p");
     let partePolar = document.createElement("p");
 
+    if(!verificaNumComplexos()){
+        manipulacoes.innerHTML = "";
+        numComplexos = 1;
+    } 
+        
     tituloCartesiana.innerHTML = "Forma Cartesiana"
     tituloPolar.innerHTML = "Forma Polar: ";
 
@@ -134,8 +158,14 @@ function adicionaNaTela (complexoCartesiano, complexoPolar){
     novoComplexo.appendChild(parteCartesiana);
     novoComplexo.appendChild(tituloPolar);
     novoComplexo.appendChild(partePolar);
-    
 }
+
+/*Operações*/
+/*Soma*/
+let botaoSoma = document.getElementById("somar");
+botaoSoma.onclick = function (){
+    
+}  
 
 
 
