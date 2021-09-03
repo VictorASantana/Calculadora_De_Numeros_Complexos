@@ -1,6 +1,8 @@
 /*Variaveis globais*/
 let numComplexos = 0;
 let vetorDeComplexos = [];
+let vetorDeResultados = [];
+let indexR = 0;
 
 /*Criação de novos complexos*/
 function criaComplexoCartesiano (real, imag){
@@ -160,12 +162,90 @@ function adicionaNaTela (complexoCartesiano, complexoPolar){
     novoComplexo.appendChild(partePolar);
 }
 
+function adicionaNaTelaResultados (complexoCartesiano, complexoPolar){
+    let manipulacoes = document.querySelector(".resultados");
+    let novoComplexo = document.createElement("li");
+    let tituloCartesiana = document.createElement("p");
+    let tituloPolar = document.createElement("p");
+    let parteCartesiana = document.createElement("p");
+    let partePolar = document.createElement("p");
+
+    if(!verificaNumComplexos()){
+        manipulacoes.innerHTML = "";
+        numComplexos = 1;
+    } 
+        
+    tituloCartesiana.innerHTML = "Forma Cartesiana"
+    tituloPolar.innerHTML = "Forma Polar: ";
+
+    parteCartesiana.innerHTML = complexoCartesiano;
+    partePolar.innerHTML = complexoPolar;
+    manipulacoes.appendChild(novoComplexo);
+    novoComplexo.classList.add("novoItem");
+    novoComplexo.appendChild(tituloCartesiana);
+    novoComplexo.appendChild(parteCartesiana);
+    novoComplexo.appendChild(tituloPolar);
+    novoComplexo.appendChild(partePolar);
+}
+
 /*Operações*/
 /*Soma*/
 let botaoSoma = document.getElementById("somar");
 botaoSoma.onclick = function (){
-    
+    let resultadoDaSoma = new Object();
+    resultadoDaSoma = adiciona(vetorDeComplexos[0], vetorDeComplexos[1]);
+    console.log(resultadoDaSoma);
+    vetorDeResultados.push(resultadoDaSoma);
+    let formataCart;
+    if(resultadoDaSoma.parteImaginaria >= 0) formataCart = "Z" + indexR + " = " + resultadoDaSoma.parteReal + " + " + resultadoDaSoma.parteImaginaria + "j";
+    else formataCart = "Z" + indexR + " = " + resultadoDaSoma.parteReal + " " + resultadoDaSoma.parteImaginaria + "j";
+    let formataPolar = "Z" + indexR + " = " + resultadoDaSoma.modulo + " ∠" + resultadoDaSoma.angulo;
+    adicionaNaTelaResultados(formataCart, formataPolar);
+    indexR++;
+
 }  
+
+/*Subtração*/
+let botaoSub = document.getElementById("subtrair");
+botaoSub.onclick = function (){
+    let resultadoDaSub = new Object();
+    resultadoDaSub = subtrai(vetorDeComplexos[0], vetorDeComplexos[1]);
+    console.log(resultadoDaSub);
+    let formataCart;
+    if(resultadoDaSub.parteImaginaria >= 0) formataCart = "Z" + indexR + " = " + resultadoDaSub.parteReal + " + " + resultadoDaSub.parteImaginaria + "j";
+    else formataCart = "Z" + indexR + " = " + resultadoDaSub.parteReal + " " + resultadoDaSub.parteImaginaria + "j";
+    let formataPolar = "Z" + indexR + " = " + resultadoDaSub.modulo + " ∠" + resultadoDaSub.angulo;
+    adicionaNaTelaResultados(formataCart, formataPolar);
+    indexR++;
+} 
+
+/*Multiplicação*/ 
+let botaoMult = document.getElementById("multiplica");
+botaoMult.onclick = function (){
+    let resultadoDaMult = new Object();
+    resultadoDaMult = multiplica(vetorDeComplexos[0], vetorDeComplexos[1]);
+    console.log(resultadoDaMult);
+    let formataCart;
+    if(resultadoDaMult.parteImaginaria >= 0) formataCart = "Z" + indexR + " = " + resultadoDaMult.parteReal + " + " + resultadoDaMult.parteImaginaria + "j";
+    else formataCart = "Z" + indexR + " = " + resultadoDaMult.parteReal + " " + resultadoDaMult.parteImaginaria + "j";
+    let formataPolar = "Z" + indexR + " = " + resultadoDaMult.modulo + " ∠" + resultadoDaMult.angulo;
+    adicionaNaTelaResultados(formataCart, formataPolar);
+    indexR++;
+}
+
+/*Divisão*/ 
+let botaoDiv = document.getElementById("divide");
+botaoDiv.onclick = function (){
+    let resultadoDaDiv = new Object();
+    resultadoDaDiv = divide(vetorDeComplexos[0], vetorDeComplexos[1]);
+    console.log(resultadoDaDiv);
+    let formataCart;
+    if(resultadoDaDiv.parteImaginaria >= 0) formataCart = "Z" + indexR + " = " + resultadoDaDiv.parteReal + " + " + resultadoDaDiv.parteImaginaria + "j";
+    else formataCart = "Z" + indexR + " = " + resultadoDaDiv.parteReal + " " + resultadoDaDiv.parteImaginaria + "j";
+    let formataPolar = "Z" + indexR + " = " + resultadoDaDiv.modulo + " ∠" + resultadoDaDiv.angulo;
+    adicionaNaTelaResultados(formataCart, formataPolar);
+    indexR++;
+} 
 
 
 
