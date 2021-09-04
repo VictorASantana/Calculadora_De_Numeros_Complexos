@@ -181,7 +181,7 @@ function adicionaNaTelaResultados (complexoCartesiano, complexoPolar){
     parteCartesiana.innerHTML = complexoCartesiano;
     partePolar.innerHTML = complexoPolar;
     manipulacoes.appendChild(novoComplexo);
-    novoComplexo.classList.add("novoItem");
+    novoComplexo.classList.add("novoResultado");
     novoComplexo.appendChild(tituloCartesiana);
     novoComplexo.appendChild(parteCartesiana);
     novoComplexo.appendChild(tituloPolar);
